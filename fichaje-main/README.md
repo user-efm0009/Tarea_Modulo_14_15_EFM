@@ -1,50 +1,12 @@
-# 🕒 Módulo de Fichaje de Asistencia - Odoo 17
+<img width="520" height="96" alt="Captura_1" src="https://github.com/user-attachments/assets/ce83a66b-2ee0-4cd9-adb6-2a7644d3ef00" />
+A través de este comando de docker, copiamos todos los archivos de esa carpeta sobre el módulo de fichaje en Odoo
+Y también, reiniciamos Odoo al completo
 
-Este módulo ha sido desarrollado para gestionar de manera eficiente el registro de jornadas laborales (entradas y salidas) dentro del ecosistema Odoo 17.
+<img width="1361" height="634" alt="Captura_2" src="https://github.com/user-attachments/assets/dbb93e08-635e-4d23-a9e9-e7f605a18c65" />
+Si el paso 1 lo hemos completado de manera exitosa, al insertar el nombre cambiado con nuestra nombre y la presencia en models.py, deberia de aparecernos el módulo de fichaje cambiado con el nombre que modificamos
 
-## 👤 Autor
-* **Mª del Carmen Sánchez Ruiz** 🎓
+<img width="1365" height="767" alt="Captura_3" src="https://github.com/user-attachments/assets/5b84345c-1c58-411d-b8d8-a8c3cc7ebfb0" />
+Dentro del módulo creado, insertamos un nuevo fichaje
 
-## 📋 Descripción del Proyecto
-El objetivo de esta aplicación es proporcionar una herramienta sencilla para que los empleados registren su asistencia. El sistema garantiza la persistencia de los datos y una interfaz integrada con el resto de módulos de Odoo.
-
-## 🛠️ Tecnologías y Arquitectura
-* **ERP**: Odoo 17 (Community Edition). 🖥️
-* **Lenguajes**: Python (Lógica de negocio) y XML (Vistas e Interfaz). 🐍
-* **Base de Datos**: PostgreSQL 15. 🐘
-* **Despliegue**: Docker y Docker Compose para una infraestructura ágil. 🐋
-* **Gestión de DB**: pgAdmin 4 para auditoría de tablas. 📊
-
-## 🚀 Instalación y Configuración
-
-### 1. Despliegue de Contenedores
-Asegúrate de tener instalado Docker y ejecuta desde la terminal:
-```bash
-docker-compose up -d
-Instalación del Módulo
-Para cargar los archivos en el servidor Odoo:
-
-Copia los archivos al volumen de addons:
-
-Bash
-docker cp . odoo:/mnt/extra-addons/fichaje
-Reinicia el contenedor para que Odoo detecte los cambios:
-
-Bash
-docker restart odoo
-En Odoo, accede a Aplicaciones, quita el filtro predeterminado y busca "Fichaje de Asistencia" para instalarlo.
-
-🔒 Seguridad y Acceso
-Se ha implementado el archivo ir.model.access.csv para definir los permisos de lectura, creación y escritura del modelo fichaje.asistencia, permitiendo que el menú sea visible para los usuarios autorizados. 🔑
-
-📂 Estructura del Módulo
-models/: Definición de la lógica y campos (employee_id, fecha_fichaje, tipo_accion).
-
-views/: Diseño de las interfaces de usuario (vistas de tipo list y form).
-
-security/: Reglas de acceso al sistema.
-
-__manifest__.py: Metadatos e inventario del módulo.
-
-
-
+<img width="1365" height="767" alt="Captura_4" src="https://github.com/user-attachments/assets/0fedc4ab-f832-4152-92bc-506190745b70" />
+Aquí tenemos la consulta SQL en PGADMIN para demostrar que existe el tipo de acción "descanso"
